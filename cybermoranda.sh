@@ -1,0 +1,50 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+clear
+echo -e "\e[1;92m"
+echo "🔐 CYBER MORANDA TOOLKIT v2.0 🔥"
+echo "---------------------------------"
+echo "1. Launch Zphisher"
+echo "2. Run SQLMap on test site"
+echo "3. Nmap Scanner"
+echo "4. Whois Lookup"
+echo "5. Exit"
+echo "---------------------------------"
+read -p "Choose an option (1-5): " opt
+
+case $opt in
+  1)
+    echo "[+] Launching Zphisher..."
+    if [ ! -d "$HOME/zphisher" ]; then
+      git clone https://github.com/htr-tech/zphisher.git $HOME/zphisher
+    fi
+    cd $HOME/zphisher
+    bash zphisher.sh
+    ;;
+  2)
+    echo "[+] Running SQLMap on test site..."
+    if [ ! -d "$HOME/sqlmap" ]; then
+      git clone https://github.com/sqlmapproject/sqlmap.git $HOME/sqlmap
+    fi
+    python3 $HOME/sqlmap/sqlmap.py -u "http://testphp.vulnweb.com/listproducts.php?cat=1" --dbs
+    ;;
+  3)
+    echo "[+] Enter target domain or IP for Nmap scan:"
+    read target
+    pkg install nmap -y
+    nmap $target
+    ;;
+  4)
+    echo "[+] Enter domain for WHOIS lookup:"
+    read domain
+    pkg install whois -y
+    whois $domain
+    ;;
+  5)
+    echo "[*] Exiting Cyber Moranda Toolkit. Stay ethical! 💻"
+    exit
+    ;;
+  *)
+    echo "[!] Invalid option. Try again."
+    ;;
+esac

