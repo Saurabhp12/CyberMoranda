@@ -42,6 +42,7 @@ Website vulnerability scanner
 
 --- 
 HOW TO INSTALL 
+
 nano cybermoranda.sh
 chmod +x cybermoranda.sh
 ./cybermoranda.sh
