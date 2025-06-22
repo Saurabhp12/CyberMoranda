@@ -40,4 +40,8 @@ Website vulnerability scanner
 ✊ Stay ethical, stay powerful.
 
 
----
+--- 
+HOW TO INSTALL 
+nano cybermoranda.sh
+chmod +x cybermoranda.sh
+./cybermoranda.sh
